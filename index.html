@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake JS</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="app">
+        <!-- Рахунок та звук -->
+        <div class="menu">
+            <span id="score"> 0 </span>
+            <div class="sound">
+                <img id="volumeIcon" src="./img/sound.svg" alt="volumeIcon">
+            </div>
+        </div>
+
+        <audio id="audio" src="./audio/bg_sound.mp3"></audio>
+
+        <!-- модальне вікно правил -->
+        <button id="rules"  role="button">Правила</button>
+
+        <div id="condition" class="condition">
+            <div class="content">
+                <h2>Правила <span class="close">X</span> </h2> 
+                    <br>  <!-- хрестик, щоб закрити правила -->
+                    <div class="block">
+                        <div class="pair">
+                            <div class="image">
+                                <img src="./img/snake/snake.png" width="50px" height="50px">
+                            </div>
+                            <div class="text">
+                                <p>Їж фрукти. Адже, саме вони, допомагають тобі рости.</p>
+                            </div>
+                        </div>
+                     <br>  
+                        <div class="pair">
+                            <div class="image">
+                                <img src="./img/snake/ouroboros.png" width="50px" height="50px">
+                            </div>
+                            <div class="text">
+                                <p>Не їж сам себе, бо, для тебе, це кінець гри.</p>
+                            </div>
+                        </div>
+                     <br>
+                        <div class="pair">
+                            <div class="image">
+                                <img src="./img/snake/square.png" width="50px" height="50px">
+                            </div>
+                            <div class="text">
+                                <p>Будь обережний із краєм поля. Якщо зачепиш його, тобі не жити.</p>
+                            </div>
+                        </div>
+                     
+                    </div>
+                     
+            </div>
+        </div>
+
+        <!-- модальне вікно старту гри -->
+        <div class="start-game"> <!-- модальне вікно, вибір скіна -->
+            <h2>Choose Player</h2>
+            <div class="skins"> <!-- вибір скіна -->
+                    <input type="radio" id="skin-1" name="skin" value="skin1" checked/>
+                      <label class="select-skin skin-1" for="skin-1"></label>
+                    
+                    <input type="radio" id="skin-2" name="skin" value="skin2" />
+                      <label class="select-skin skin-2" for="skin-2"></label>
+                      
+                    <input type="radio" id="skin-3" name="skin" value="skin3" />
+                      <label class="select-skin skin-3" for="skin-3"></label>
+            </div> 
+
+            <button id="btnStartGame">Start Game</button>
+        </div>
+
+        <!-- Модальне вікно результатів гри -->
+       <div class="end-game hidden"> <!-- вікно, якщо програв -->
+            <h1>Нажаль, це кінець!</h1>
+            <h2 id="endGameText"></h2>
+            <button id="btnRestartGame">Restart Game</button>
+        </div>
+
+        <div class="win-game hidden"> <!-- вікно, якщо виграв-->
+            <h1>Вау! Ти переміг!</h1>
+            <h2 id="winGameText"></h2>
+            <button id="btnReloadGame">Reload Game</button>
+        </div>
+
+        <!-- Блок игры -->
+        <div class="wrapperSnake hidden"> </div>
+        <div class="wrapperFood hidden"> </div>
+
+    </div>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/audio.js"></script>
+    <script src="./js/window.js"></script>
+    <script src="./js/start.js"></script>
+    <script src="./js/player.js"></script>
+</body>
+
+</html>

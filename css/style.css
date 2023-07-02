@@ -1,0 +1,350 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Фонове зображення */
+body {
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+}
+
+/* Рахкнок та звук */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+/*рахунок*/
+#score {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 50px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgb(184, 42, 128);
+    text-shadow: 1px 0 1px rgb(138, 145, 255),
+       0 1px 1px rgb(138, 145, 255),
+       -0.5px 0 1px rgb(138, 145, 255),
+       0 -1px 1px rgb(138, 145, 255);
+}
+
+/* Поле гри */
+.wrapperSnake {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    box-shadow: rgb(209, 50, 140) 5px 5px 45px 2px;
+    background-color: #2a0553;
+    background-image: url('../img/bg_sq.svg');
+    background-clip: border-box;
+    background-size: 25px;
+}
+
+.wrapperFood {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+/* вибір персонажа (скіну) для змійки STARTGAME */
+.start-game .skins {
+    display: flex;
+    justify-content: center;
+    /* Выравнивание по горизонтали по центру */
+    align-items: center;
+}
+.start-game .select-skin{
+    width: 28%;
+    height: 130px;
+    margin: 30px 8px 5px 5px;
+    border: 3px solid rgb(209, 50, 140);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+.start-game .select-skin.skin-1 {
+    background-image: url(../img/snake/green.png);
+    background-position: 10px;
+ }
+
+.start-game .select-skin.skin-2{
+    background-image: url(../img/snake/yellow.png);
+}
+.start-game .select-skin.skin-3{
+    background-image: url(../img/snake/red.png);
+}
+.start-game .skins input{
+    display: none;
+}
+.start-game .skins input[type=radio]:checked + label {
+    border: 4px solid rgb(78, 9, 78);
+}
+
+/* Змійка на полі бою*/
+.snake{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+/* Скін для змійки на полі бою */
+/* Скін 1 */
+.snake.head-skin1 {
+    background-image: url(../img/snake/head1.svg);
+    background-repeat: no-repeat;
+}
+
+/* Скін 2 */
+.snake.head-skin2 {
+    background-image: url(../img/snake/head2.svg);
+    background-repeat: no-repeat;
+}
+/* Скін 3 */
+.snake.head-skin3 {
+    background-image: url(../img/snake/head3.svg);
+    background-repeat: no-repeat;
+}
+/* Body skins */
+/* Skin 1 */
+.snake.body-skin1 {
+    background-image: url(../img/snake/body1.svg);
+    background-repeat: no-repeat;
+}
+
+/* Скін 2 */
+.snake.body-skin2 {
+    background-image: url(../img/snake/body2.svg);
+    background-repeat: no-repeat;
+}
+/* Скін 3 */
+.snake.body-skin3 {
+    background-image: url(../img/snake/body3.svg);
+    background-repeat: no-repeat;
+}
+
+/*Модальні вікна*/
+.start-game,
+.end-game,
+.win-game {
+    width: 450px;
+    background: rgb(220, 210, 220);
+    border-radius: 10px;
+    margin: 5% auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    position: relative;
+}
+
+.start-game {
+    width: 500px!important;
+    height: 300px;
+}
+
+.win-game,
+.end-game {
+    height: 170px;
+    width: 395px !important;
+}
+
+/*текст у вікні*/
+.start-game h2,
+.end-game h1,
+.win-game h1,
+.content h2 {
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-size: 28px;
+    color: rgb(255 177 222);
+    padding: 13px 5px 5px 5px;
+    margin: 13px 0 0 0;
+    text-shadow: 1px 0 1px rgb(78, 9, 78),
+       0 1px 1px rgb(78, 9, 78),
+       -0.5px 0 1px rgb(78, 9, 78),
+       0 -1px 1px rgb(78, 9, 78);
+ }
+ 
+.content h2 {
+    padding: 5px !important;
+    margin: 5px 0 0 0 !important;
+ }
+
+/*Твій результат*/
+.end-game h2,
+.win-game h2{
+    font-family: "Open Sans", sans-serif;
+    text-align: center;
+    font-size: 19px;
+    color: #2a0553;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+ }
+
+/*кнопка у вікні*/
+.start-game button,
+.end-game button,
+.win-game button {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgb(220, 210, 220);
+    color: rgb(78, 9, 78);
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    margin: 15px auto;
+    display: block;
+}
+
+.start-game button:active,
+.end-game button:active,
+.win-game button:active {
+    box-shadow: 0px 0px 0px 0px;
+    top: 5px;
+    left: 5px;
+}
+
+    /*ПРАВИЛА*/
+.condition {
+     opacity: 0;
+     display: none;
+}
+    
+.condition.isActive {
+    display: block;
+    opacity: 1;
+}
+
+ .condition .content {
+     /*рамка с текстом*/
+     position: absolute;
+     top: calc(50% - 150px);
+     left: calc(50% - 200px);
+     width: 400px;
+     height: 300px;
+     background: rgb(220, 210, 220);
+     border-radius: 10px;
+     box-shadow: 10px 5px 5px #2a0553;
+     padding: 0 20px;
+     transition: all 2s ease-out;
+ }
+
+.condition .content h2 span {
+    /*хрестик*/
+    float: right;
+    cursor: pointer;
+    color: rgb(78, 9, 78);
+    text-shadow: none;
+}
+   /*кнопка "правила" квадратная*/
+/* #rules { */
+    /*кнопка "правила"*/
+    /* font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgb(78, 9, 78);
+    background: rgb(220, 210, 220);
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+} */
+
+
+/*кнопка "правила" овальная*/
+#rules {
+    appearance: button;
+    background-color: rgb(220, 210, 220);
+    border: 1px solid rgb(220, 210, 220);
+    border-radius: 4px;
+    box-shadow: rgb(78, 9, 78) 4px 4px 0 0, rgb(78, 9, 78) 4px 4px 0 1px;
+    box-sizing: border-box;
+    color: rgb(78, 9, 78);
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    width: 115px;
+    line-height: 20px;
+    margin: 0 5px 10px 0;
+    overflow: visible;
+    padding: 11px 6px;
+    text-align: center;
+    touch-action: manipulation;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    vertical-align: middle;
+    white-space: nowrap;
+ }
+ 
+ #rules:active {
+    box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+    outline: 0;
+ }
+ 
+ #rules:not([disabled]):active {
+    box-shadow: rgb(78, 9, 78) 2px 2px 0 0, #000 2px 2px 0 1px;
+    transform: translate(2px, 2px);
+ }
+ 
+ 
+ 
+ /*робота з самими правилами(текст і картинка)*/
+ .content .block {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ .content .block .pair {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+ }
+ 
+ .content .block .image {
+    margin-right: 10px;
+ }
+ 
+ .content .block .text {
+    font-size: 17px;
+ }
+
+ .apple {
+    width: 24px;
+    height: 24px;
+    margin-top: 1px;
+    margin-left: 1px;
+    /*background-size: contain;*/
+    position: absolute;
+    background-image: url(../img/food/apple.svg);
+}
+
